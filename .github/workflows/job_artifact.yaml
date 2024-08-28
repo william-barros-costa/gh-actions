@@ -11,3 +11,13 @@ jobs:
         with:
           name: artifact-demo
           path: test.txt
+  use-artifact:
+    needs: artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: artifact-demo
+      - name: Print artifact content
+        run: cat test.txt
