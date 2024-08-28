@@ -1,5 +1,7 @@
 name: react-demo-workflow
-on: push
+on: 
+  push:
+    branches: non-existing-branch
 jobs:
   test:
     runs-on: ubuntu-latest
