@@ -1,5 +1,9 @@
 name: Demo Deploy after Test
-on: [push, workflow_dispatch]
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - non-existing-branch
 jobs:
   test:
     runs-on: ubuntu-latest
