@@ -1,0 +1,20 @@
+name: Environment Variables Demo
+on: workflow_dispatch
+env:
+  WORKFLOW_LEVEL_ENVIRONMENT_VARIABLE: "workflow"
+jobs:
+  environment_variable:
+    env:
+      JOB_LEVEL_ENVIRONMENT_VARIABLE: "job"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 
+        env:
+          STEP_LEVEL_ENVIRONMENT_VARIABLE: "step"
+        run: echo "$STEP_LEVEL_ENVIRONMENT_VARIABLE"
+        
+      - name: Job
+        run: echo "$JOB_LEVEL_ENVIRONMENT_VARIABLE"
+        
+      - name: Workflow 
+        run: echo "$WORKFLOW_LEVEL_ENVIRONMENT_VARIABLE"
