@@ -3,6 +3,8 @@ on: workflow_dispatch
 jobs:
   artifact:
     runs-on: ubuntu-latest
+    outputs:
+      text-output: ${{ steps.output.outputs.textOut }}
     steps:
       - name: Create file
         run: echo "Test" > test.txt
@@ -11,6 +13,9 @@ jobs:
         with:
           name: artifact-demo
           path: test.txt
+      - name: Create an output
+        id: output
+        run: echo "textOut=Test" >> $GITHUB_OUTPUT
   use-artifact:
     needs: artifact
     runs-on: ubuntu-latest
