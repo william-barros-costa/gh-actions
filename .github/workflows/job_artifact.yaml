@@ -1,0 +1,13 @@
+name: Demo Artifact
+on: workflow_dispatch
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create file
+        run: echo "Test" > test.txt
+      - name: Generate Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact-demo
+          path: test.txt
