@@ -26,3 +26,5 @@ jobs:
           name: artifact-demo
       - name: Print artifact content
         run: cat test.txt
+      - name: Output text-ouput from previous step
+        run: echo "${{ needs.artifact.outputs.text-output }}"
