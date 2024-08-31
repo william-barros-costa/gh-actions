@@ -3,4 +3,6 @@ on: workflow_dispatch
 jobs:
   reusing_job:
     uses: ./.github/workflows/dummy_reusable_workflow.yaml
+    with:
+      echo1: "Comes from reusing_workflow"
     
