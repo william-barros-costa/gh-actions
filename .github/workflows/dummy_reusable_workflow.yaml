@@ -1,8 +1,19 @@
 name: reusable_workflow
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      echo1: 
+        description: string to echo
+        required: true
+        type: string
+      echo2:
+        description: int to echo
+        type: number
+        required: false
+        default: 3
 jobs:
   reusable_job:
     runs-on: ubuntu-latest
     steps:
       - name: simple echo
-        run: echo "I am a reusable step from a reusable workflow"
+        run: echo "I am a reusable step from a reusable workflow. echo1: ${{ inputs.echo1 }} echo2: ${{ inputs.echo2 }}"
