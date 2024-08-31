@@ -6,7 +6,7 @@ jobs:
     with:
       echo1: "Comes from reusing_workflow"
   print_output:
-    needs: reusing_job:
+    needs: reusing_job
     runs-on: ubuntu-latest
     steps:
       - name: Print Reusable Workflow output
