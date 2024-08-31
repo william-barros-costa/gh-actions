@@ -5,4 +5,12 @@ jobs:
     uses: ./.github/workflows/dummy_reusable_workflow.yaml
     with:
       echo1: "Comes from reusing_workflow"
+  print_output:
+    needs: reusing_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Reusable Workflow output
+        run: echo "${{ needs.reusing_job.outputs.output }}
+      
+      
     
