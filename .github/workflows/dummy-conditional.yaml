@@ -8,5 +8,5 @@ jobs:
         id: failing_step
         run: exit 10
       - name: Run if fail previous fails
-        if: steps.failing_step.outcome == 'failure'
+        if: failure() && steps.failing_step.outcome == 'failure'
         run: echo "Ran after previous failed"
