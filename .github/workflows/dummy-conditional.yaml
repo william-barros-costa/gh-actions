@@ -1,0 +1,12 @@
+name: Demo of conditional
+on: workflow_dispatch
+jobs:
+  demo_conditional:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failing step
+        id: failing_step
+        run: exit 10
+      - name: Run if fail previous fails
+        if: steps.failing_step.outcome == 'failure'
+        run: echo "Ran after previous failed"
