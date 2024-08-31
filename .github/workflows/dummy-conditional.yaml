@@ -10,3 +10,10 @@ jobs:
       - name: Run if fail previous fails
         if: failure() && steps.failing_step.outcome == 'failure'
         run: echo "Ran after previous failed"
+  run_if_demo_conditional_failed:
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: demo_conditional
+    steps:
+      - name: Run if previous job fails
+        run: echo "Ran after previous job failed"
