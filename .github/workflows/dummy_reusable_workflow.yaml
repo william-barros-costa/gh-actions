@@ -16,4 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: simple echo
-        run: echo "I am a reusable step from a reusable workflow. echo1: ${{ inputs.echo1 }} echo2: ${{ inputs.echo2 }}"
+        run: |
+          echo "I am a reusable step from a reusable workflow."
+          echo "echo1: ${{ inputs.echo1 }}" 
+          echo "echo2: ${{ toString(inputs.echo2) }}"
