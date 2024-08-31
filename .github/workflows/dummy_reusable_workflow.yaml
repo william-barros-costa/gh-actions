@@ -12,13 +12,17 @@ on:
         required: false
         default: 3
     outputs:
-      output: ${{ steps.set_output.outputs.step-result }} 
+      output: 
+        description: reusable workflow output
+        value: ${{ jobs.reusable_job.outputs.result }}
     
 jobs:
   reusable_job:
     runs-on: ubuntu-latest
     env:
       number: ${{ inputs.echo2 }}
+    outputs:
+      result: ${{ steps.set_output.outputs.step-result }} 
     steps:
       - name: simple echo
         run: |
