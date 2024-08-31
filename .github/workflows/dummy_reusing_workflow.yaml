@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Reusable Workflow output
-        run: echo "${{ needs.reusing_job.outputs.output }}
+        run: echo "${{ needs.reusing_job.outputs.output }}"
       
       
     
