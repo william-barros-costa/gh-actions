@@ -1,0 +1,6 @@
+name: Dummy Reusing Workflow
+on: workflow_dispatch
+jobs:
+  reusing_job:
+    uses: ./.github/workflows/dummy_reusable_workflow.yaml
+    
