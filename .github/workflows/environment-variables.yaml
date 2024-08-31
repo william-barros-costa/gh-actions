@@ -2,6 +2,7 @@ name: Environment Variables Demo
 on: workflow_dispatch
 env:
   WORKFLOW_LEVEL_ENVIRONMENT_VARIABLE: "workflow"
+  DEMO_SECRET: ${{ secret.DEMO_SECRET }} 
 jobs:
   environment_variable:
     env:
