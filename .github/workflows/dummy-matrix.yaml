@@ -6,6 +6,12 @@ jobs:
       matrix:
         echo1: ['HI', 'HELLO']
         echo2: ['Joe', 'John']
+        include:
+          - echo1: "Hi"
+            echo2: "Thomas"
+        exclude:
+          - echo1: 'HI'
+            echo2: 'Joe'
     runs-on: ubuntu-latest
     steps:
       - name: Print Variables
