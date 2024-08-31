@@ -8,15 +8,17 @@ on:
         type: string
       echo2:
         description: int to echo
-        type: number
+        type: string
         required: false
         default: 3
 jobs:
   reusable_job:
     runs-on: ubuntu-latest
+    env:
+      number: ${{ inputs.echo2 }}
     steps:
       - name: simple echo
         run: |
           echo "I am a reusable step from a reusable workflow."
           echo "echo1: ${{ inputs.echo1 }}" 
-          echo "echo2: ${{ toString(inputs.echo2) }}"
+          echo "echo2: ${{ inputs.echo2 }}"
