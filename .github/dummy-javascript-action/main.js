@@ -14,3 +14,6 @@ exec.exec("echo 'This is an exec command'")
 
 // Get github action name
 core.notice(github.context.action)
+
+// Generate output
+core.setOutput('sample_output', 'This is a sample output that comes from the js file')
