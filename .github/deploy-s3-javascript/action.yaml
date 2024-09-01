@@ -1,0 +1,7 @@
+name: Dummy javascript action
+description: Dummy javascript action
+runs:
+  using: 'node16'
+  main: main.js
+  pre: pre.js # Runs before main.js
+  post: post.js # Runs after main.js
