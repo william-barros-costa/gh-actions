@@ -1,5 +1,13 @@
 name: Dummy javascript action
 description: Dummy javascript action
+inputs:
+  sample_input:
+    required: false
+    description: sample input to send to js
+    default: This comes from dummy js action
+outputs:
+  sample_output:
+    description: Sample input to send from js
 runs:
   using: 'node16'
   main: main.js
