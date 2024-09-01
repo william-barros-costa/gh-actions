@@ -1,0 +1,8 @@
+name: Use Custom Action
+on: workflow_dispatch
+jobs:
+  use_custom_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using custom action
+        uses: ./.github/actions/dummy-composite/action.yaml
