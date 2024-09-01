@@ -1,0 +1,16 @@
+name: Dummy Docker Custom Action
+description: Dummy Docker Custom Action
+inputs:
+  sample_input:
+    required: false
+    description: sample input to send to js
+    default: This comes from dummy js action
+outputs:
+  sample_output:
+    description: Sample input to send from js
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    GITHUB_INPUT: "Message that comes from Dummy Docker Custom Action"
+  
