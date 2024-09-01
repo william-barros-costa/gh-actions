@@ -5,6 +5,10 @@ inputs:
     required: false
     description: Custom message that the user of this dummy composite action can change
     default: "The user did not specify a message"
+outputs:
+  custom_output:
+    description: Custom output that the user of this dummy composite can receive
+    value: ${{ steps.output.outputs.output_message }}
 runs:
   using: 'composite'
   steps:
@@ -13,3 +17,7 @@ runs:
         echo "I am a message from a dummy composite action"
         echo "${{ inputs.custom_message }}"
       shell: bash
+    - name: Create output
+      id: output
+      shell: bash
+      run: echo "output_message='Hello! This is an output message'" >> $GITHUB_OUTPUT
