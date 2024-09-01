@@ -1,9 +1,9 @@
 FROM ubuntu:latest
 
-echo <<EOF > /entrypoint.sh
+RUN echo <<EOF > /entrypoint.sh
 #!/bin/sh -l
 
-RUN echo "Hello $1"
+echo "Hello $1"
 time=$(date)
 echo "sample_output=$time" >> $GITHUB_OUTPUT
 EOF
