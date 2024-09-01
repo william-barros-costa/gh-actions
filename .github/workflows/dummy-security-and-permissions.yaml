@@ -13,3 +13,22 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: triage
+  
+  # Example to show how to use OpenID. To make it work we would require a docker/js action to deploy the website.
+  iam-aws:
+    if: false
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get AWS Permissions
+        uses: aws-actions/configure-aws-credentials
+        with:
+          role-to-assume: arn:aws:iam::450226343468:role/GitHubDemo1
+          aws-region: us-east-1
+      - name: Deploy site
+        uses: ./.github/actions/deploy-s3-docker
+        with:
+          bucket: bucket-name
+          dist-folder: dist
