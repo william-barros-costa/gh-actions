@@ -30,10 +30,10 @@ jobs:
     steps:
       - name: Checkout repository content
         uses: actions/checkout@v3
-      - name: Using custom javascript action
+      - name: Using custom docker action
         id: dummy-docker
         uses: ./.github/dummy-docker-action
         with:
           sample_input: "This comes from dummy use custom action"
-      - name: Print output from custom js action
+      - name: Print output from custom docker action
         run: echo "${{ steps.dummy-docker.outputs.sample_output }}"
