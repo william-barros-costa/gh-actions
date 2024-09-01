@@ -13,15 +13,27 @@ jobs:
           custom_message: "This comes from dummy use custom action"
       - name: Print output from custom composite action
         run: echo "${{ steps.dummy-composite.outputs.custom_output }}"
-  use_javascript_action:
+#  use_javascript_action:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository content
+#        uses: actions/checkout@v3
+#      - name: Using custom javascript action
+#        id: dummy-js
+#        uses: ./.github/dummy-javascript-action
+#        with:
+#          sample_input: "This comes from dummy use custom action"
+#      - name: Print output from custom js action
+#        run: echo "${{ steps.dummy-js.outputs.sample_output }}"
+  use_docker_action:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository content
         uses: actions/checkout@v3
       - name: Using custom javascript action
-        id: dummy-js
-        uses: ./.github/dummy-javascript-action
+        id: dummy-docker
+        uses: ./.github/dummy-docker-action
         with:
           sample_input: "This comes from dummy use custom action"
       - name: Print output from custom js action
-        run: echo "${{ steps.dummy-js.outputs.sample_output }}"
+        run: echo "${{ steps.dummy-docker.outputs.sample_output }}"
