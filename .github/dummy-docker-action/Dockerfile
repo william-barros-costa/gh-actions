@@ -3,7 +3,7 @@ FROM ubuntu:latest
 echo <<EOF > /entrypoint.sh
 #!/bin/sh -l
 
-echo "Hello $1"
+RUN echo "Hello $1"
 time=$(date)
 echo "sample_output=$time" >> $GITHUB_OUTPUT
 EOF
