@@ -11,6 +11,6 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    GITHUB_INPUT: "Message that comes from Dummy Docker Custom Action"
+  args:
+    - ${{ sample_input }}
   
