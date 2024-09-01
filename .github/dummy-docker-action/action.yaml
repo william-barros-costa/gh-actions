@@ -12,5 +12,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ sample_input }}
+    - ${{ inputs.sample_input }}
   
