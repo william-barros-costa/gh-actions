@@ -4,10 +4,10 @@ inputs:
   sample_input:
     required: false
     description: sample input to send to js
-    default: This comes from dummy js action
+    default: This comes from dummy docker action
 outputs:
   sample_output:
-    description: Sample input to send from js
+    description: Sample input to send from docker
 runs:
   using: 'docker'
   image: 'Dockerfile'
