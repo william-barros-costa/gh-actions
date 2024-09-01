@@ -1,15 +1,25 @@
 name: Use Custom Action
 on: workflow_dispatch
 jobs:
-  use_custom_action:
+  use_composite_action:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository content
         uses: actions/checkout@v3
-      - name: Using custom action
+      - name: Using custom composite action
         id: dummy-composite
         uses: ./.github/actions/dummy-composite
         with:
           custom_message: "This comes from dummy use custom action"
       - name: Print output from custom action
         run: echo "${{ steps.dummy-composite.outputs.custom_output }}"
+  use_javascript_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository content
+        uses: actions/checkout@v3
+      - name: Using custom javascript action
+        id: dummy-js
+        uses: ./.github/actions/deploy-s3-javascript
+#        with:
+#          custom_message: "This comes from dummy use custom action"
