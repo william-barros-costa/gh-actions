@@ -1,8 +1,15 @@
 name: Dummy Composite Action
 description: Description of Dummy Composite Action
+inputs:
+  custom_message:
+    required: false
+    description: Custom message that the user of this dummy composite action can change
+    default: "The user did not specify a message"
 runs:
   using: 'composite'
   steps:
     - name: Simple message
-      run: echo "I am a message from a dummy composite action"
+      run: |
+        echo "I am a message from a dummy composite action"
+        echo "${{ inputs.custom_message }}"
       shell: bash
