@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Using custom action
-        uses: ../.github/actions/dummy-composite
+        uses: ./../.github/actions/dummy-composite
