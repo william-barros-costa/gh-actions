@@ -1,0 +1,8 @@
+name: Dummy Composite Action
+description: Description of Dummy Composite Action
+runs:
+  using: 'composite'
+  steps:
+    - name: Simple message
+      run: echo "I am a message from a dummy composite action"
+      shell: bash
