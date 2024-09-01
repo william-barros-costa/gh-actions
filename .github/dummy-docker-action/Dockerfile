@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM alpine:3.10
 
 RUN echo <<EOF > /entrypoint.sh
 #!/bin/sh -l
